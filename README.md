@@ -11,7 +11,7 @@ This Project consists of this following packages:
 
 
 In /SQAHW2/src/edu/pitt/CitySim9002.java,  the following code ensure only 5 visitors shall traverse the City, one after the other.
-```
+```java
 for (int i = 0; i < 5; i++) {
 	//...
 }
@@ -46,7 +46,6 @@ The following enum types makes it sure there are only four locations can be trav
 
 ```java
 public enum Location {
-
 	CathedralLearning("The Cathedral of Learning", 1), SquirrelHill("eeed", 2), ThePoint("The Point",
 			3), Downtown("Downtown", 4);
 
@@ -75,7 +74,7 @@ LocationlikeMap and LocationDisLikeMap in Helper.java, as well as two enum types
 ### 7. FUN-FIRST-VISIT. For the first visit for a given Visitor, the Visitor cannot leave the City.  The Visitor must visit at least one Location.
 
 In /SQAHW2/src/edu/pitt/CitySim9002.java,  the following code ensure every visitor must visit at least one Location
-```
+```java
 for (int i = 0; i < 5; i++) {
 	//...
 	for (int j = 0;; j++) {
@@ -95,12 +94,48 @@ The `public boolean quit(RandomGenerator generator)` defined in /SQAHW2/src/edu/
 
 ### 9. FUN-REPEAT. A Visitor shall be able to repeatedly visit a location if the random number generator produces that as the next location.
 
+Because we use random number to decide what kind of visitors and what kind of locations, it is possible that a visitor shall visit the location which has been visited last time.
+
 ### 10. FUN-ARGS. The program shall accept one and only one argument, which shall be an integer, which shall act as a seed for the random number generator.  If the program is passed in any number of arguments other than 1, including 0, or the passed-in argument is not a valid integer, the program shall display the message "Please enter one integer argument, seed" and immediately cease execution (exit).
+In /SQAHW2/src/edu/pitt/utils/TravelService.java, the `public boolean checkArgs(String[] args)` makes sure only one integer argument will be accepted.
 
+```java
+public boolean checkArgs(String[] args){
+	if(args.length != 1){
+		System.out.println("The program shall accept one and only one argument");
+		return false;
+	}
+	try{
+		Integer.parseInt(args[0]);
+	}catch(Exception e){
+		System.out.println("The input must be a Integer");
+		return false;
+	}
+	return true;
+}
+```
 ### 11. FUN-DISPLAY. The program shall always display the message "Welcome to CitySim! Your seed is _x_." (where _x_ is an integer argument passed in from the command line) as the first message of the simulation.
-
+In /SQAHW2/src/edu/pitt/CitySim9002.java,  the following code make this function successful.
+```java
+int seed = Integer.parseInt(args[0]);
+System.out.println("Welcome to CitySim!  Your seed is " + seed);
+```
 ### 12. FUN-STOP. If the Visitor has left the City, the message "Visitor _x_ has left the city.", along with a newline and then three asterisks ("***"), shall be displayed before simulating the next Visitor.
-
+In /SQAHW2/src/edu/pitt/CitySim9002.java,  the following code make this function successful.
+```java
+for (int i = 0; i < 5; i++) {
+	//...
+	for (int j = 0;; j++) {
+		if (j != 0) {
+			if (service.quit(generator)) {
+				System.out.println(people + " has left the city");
+				break;
+			}
+		}
+		//...
+	}
+	System.out.println("***");
+}
+```
 ### 13. FUN-END. After five Visitors have been simulated, the program shall exit.
-
-Since Visitors and Locations have been limited so that we can only get certain visitors and locations from given choices, I used Enum Types in java to make sure only students, professors, businessmen and bloger will be selected and Cathrdeal of Learning, The Point, Downtown and Squirrel Hill will be chosen.
+In /SQAHW2/src/edu/pitt/CitySim9002.java, after the loop ends, the program will exit automatically.
