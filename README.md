@@ -7,7 +7,7 @@ This Project consists of this following packages:
 
 ## CitySim9002 Requirements
 
->FUN-FIVE-VISITORS. Five visitors, numbered 1 through 5, shall traverse the City, one after the other.
+### 1. FUN-FIVE-VISITORS. Five visitors, numbered 1 through 5, shall traverse the City, one after the other.
 
 
 In /SQAHW2/src/edu/pitt/CitySim9002.java,  the following code ensure only 5 visitors shall traverse the City, one after the other.
@@ -18,7 +18,7 @@ for (int i = 0; i < 5; i++) {
 ```
 
 
->FUN-VISITOR. Each Visitor shall be of one of four types: a Student, a Professor, a Business Person, or a Blogger.
+### 2.FUN-VISITOR. Each Visitor shall be of one of four types: a Student, a Professor, a Business Person, or a Blogger.
 
 The following enum types makes it sure there are only four kind of vistiors can be chosen.
 ```java
@@ -41,7 +41,7 @@ public enum Visitor {
 }
 ```
 
->FUN-CITY-LOCS. The program shall simulate a City with four locations: The Cathedral of Learning, Squirrel Hill, The Point, and Downtown.
+### 3. FUN-CITY-LOCS. The program shall simulate a City with four locations: The Cathedral of Learning, Squirrel Hill, The Point, and Downtown.
 The following enum types makes it sure there are only four locations can be traveled.
 
 ```java
@@ -60,19 +60,19 @@ public enum Location {
  }
 ```
 
->FUN-PREFERENCES. A Student shall like Squirrel Hill, Downtown, and The Point, and dislike The Cathedral of Learning.  A Business Person shall like Squirrel Hill and Downtown, and dislike all other locations. A Professor shall like all locations.  A Blogger shall dislike all locations.
+### 4. FUN-PREFERENCES. A Student shall like Squirrel Hill, Downtown, and The Point, and dislike The Cathedral of Learning.  A Business Person shall like Squirrel Hill and Downtown, and dislike all other locations. A Professor shall like all locations.  A Blogger shall dislike all locations.
 
 In /SQAHW2/src/edu/pitt/utils/Helper.java, the code in static block is used to build LocationlikeMap and LocationDisLikeMap, making sure which place is liked or disliked by which kind of people.
 
->FUN-ITERATIONS. For each iteration, the program shall randomly select a location for the visitor to visit.  The choices specified in FUN-CITY-LOCS as well as the option to leave the City shall all have equal weight - that is, there is an equal chance that a visitor will have a 20% chance of visiting any location specified in FUN-CITY-LOCS and a 20% chance of leaving the City (except in cases covered under FUN-FIRST-VISIT).
+### 5. FUN-ITERATIONS. For each iteration, the program shall randomly select a location for the visitor to visit.  The choices specified in FUN-CITY-LOCS as well as the option to leave the City shall all have equal weight - that is, there is an equal chance that a visitor will have a 20% chance of visiting any location specified in FUN-CITY-LOCS and a 20% chance of leaving the City (except in cases covered under FUN-FIRST-VISIT).
 
 the RandomGenerator.java , as well as TravelService.java in /SQAHW2/src/edu/pitt/utils is used to generate random number and get a random location or a random visitor on basis of this random number.
 
->FUN-ITER-DISPLAY. At each iteration, the program shall display where the Visitor has visited and whether or not the Visitor liked that location.  This output shall be of the format:
+### 6. FUN-ITER-DISPLAY. At each iteration, the program shall display where the Visitor has visited and whether or not the Visitor liked that location.  This output shall be of the format:
 
 LocationlikeMap and LocationDisLikeMap in Helper.java, as well as two enum types make sure poeple like or dislike a certain location
 
->FUN-FIRST-VISIT. For the first visit for a given Visitor, the Visitor cannot leave the City.  The Visitor must visit at least one Location.
+### 7. FUN-FIRST-VISIT. For the first visit for a given Visitor, the Visitor cannot leave the City.  The Visitor must visit at least one Location.
 
 In /SQAHW2/src/edu/pitt/CitySim9002.java,  the following code ensure every visitor must visit at least one Location
 ```
@@ -89,7 +89,7 @@ for (int i = 0; i < 5; i++) {
 }
 ```
 
->FUN-NUM-ITERATIONS. There shall be no limit on the number of iterations for a given Visitor.
+### 8. FUN-NUM-ITERATIONS. There shall be no limit on the number of iterations for a given Visitor.
 
 The `public boolean quit(RandomGenerator generator)` defined in /SQAHW2/src/edu/pitt/utils/TravelService.java is used to decide when to quit, as long as the random number generated in /SQAHW2/src/edu/pitt/utils/RandomGenerator.java is greater than 0.2, the visitor will never finish his traverl. In other word, There shall be no limit on the number of iterations for a given Visitor.
 
