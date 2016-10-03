@@ -18,7 +18,7 @@ for (int i = 0; i < 5; i++) {
 ```
 
 
-### 2.FUN-VISITOR. Each Visitor shall be of one of four types: a Student, a Professor, a Business Person, or a Blogger.
+### 2. FUN-VISITOR. Each Visitor shall be of one of four types: a Student, a Professor, a Business Person, or a Blogger.
 
 The following enum types makes it sure there are only four kind of vistiors can be chosen.
 ```java
@@ -93,14 +93,14 @@ for (int i = 0; i < 5; i++) {
 
 The `public boolean quit(RandomGenerator generator)` defined in /SQAHW2/src/edu/pitt/utils/TravelService.java is used to decide when to quit, as long as the random number generated in /SQAHW2/src/edu/pitt/utils/RandomGenerator.java is greater than 0.2, the visitor will never finish his traverl. In other word, There shall be no limit on the number of iterations for a given Visitor.
 
-FUN-REPEAT. A Visitor shall be able to repeatedly visit a location if the random number generator produces that as the next location.
+### 9. FUN-REPEAT. A Visitor shall be able to repeatedly visit a location if the random number generator produces that as the next location.
 
-FUN-ARGS. The program shall accept one and only one argument, which shall be an integer, which shall act as a seed for the random number generator.  If the program is passed in any number of arguments other than 1, including 0, or the passed-in argument is not a valid integer, the program shall display the message "Please enter one integer argument, seed" and immediately cease execution (exit).
+### 10. FUN-ARGS. The program shall accept one and only one argument, which shall be an integer, which shall act as a seed for the random number generator.  If the program is passed in any number of arguments other than 1, including 0, or the passed-in argument is not a valid integer, the program shall display the message "Please enter one integer argument, seed" and immediately cease execution (exit).
 
-FUN-DISPLAY. The program shall always display the message "Welcome to CitySim! Your seed is _x_." (where _x_ is an integer argument passed in from the command line) as the first message of the simulation.
+### 11. FUN-DISPLAY. The program shall always display the message "Welcome to CitySim! Your seed is _x_." (where _x_ is an integer argument passed in from the command line) as the first message of the simulation.
 
-FUN-STOP. If the Visitor has left the City, the message "Visitor _x_ has left the city.", along with a newline and then three asterisks ("***"), shall be displayed before simulating the next Visitor.
+### 12. FUN-STOP. If the Visitor has left the City, the message "Visitor _x_ has left the city.", along with a newline and then three asterisks ("***"), shall be displayed before simulating the next Visitor.
 
-FUN-END. After five Visitors have been simulated, the program shall exit.
+### 13. FUN-END. After five Visitors have been simulated, the program shall exit.
 
 Since Visitors and Locations have been limited so that we can only get certain visitors and locations from given choices, I used Enum Types in java to make sure only students, professors, businessmen and bloger will be selected and Cathrdeal of Learning, The Point, Downtown and Squirrel Hill will be chosen.
