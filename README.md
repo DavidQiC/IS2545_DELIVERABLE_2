@@ -8,14 +8,38 @@ This Project consists of this following packages:
 ## CitySim9002 Requirements
 
 >FUN-FIVE-VISITORS. Five visitors, numbered 1 through 5, shall traverse the City, one after the other.
-
-```java
-
+In /SQAHW2/src/edu/pitt/CitySim9002.java,  the following code ensure only 5 visitors shall traverse the City, one after the other.
+```
+for (int i = 0; i < 5; i++) {
+	//...
+}
 ```
 
-FUN-VISITOR. Each Visitor shall be of one of four types: a Student, a Professor, a Business Person, or a Blogger.
+>FUN-VISITOR. Each Visitor shall be of one of four types: a Student, a Professor, a Business Person, or a Blogger.
 
-FUN-CITY-LOCS. The program shall simulate a City with four locations: The Cathedral of Learning, Squirrel Hill, The Point, and Downtown.
+The following enum types makes it sure there are only four kind of vistiors can be chosen.
+```java
+public enum Visitor {
+
+	Student("a Student", 1, 3, 1), Professor("a Professor", 2, 4, 0), Business("a Business Person", 3, 2,
+			2), Blogger("a Blogger", 4, 0, 4);
+	private String name;
+	private int index;
+	private int likeMax;
+	private int disLikeMax;
+
+	private Visitor(String name, int index, int likeMax, int disLikeMax) {
+		this.name = name;
+		this.index = index;
+		this.likeMax = likeMax;
+		this.disLikeMax = disLikeMax;
+	}
+	//...	
+}
+```
+
+>FUN-CITY-LOCS. The program shall simulate a City with four locations: The Cathedral of Learning, Squirrel Hill, The Point, and Downtown.
+The following enum types makes it sure there are only four locations can be traveled.
 
 ```java
 public enum Location {
