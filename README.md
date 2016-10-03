@@ -1,9 +1,24 @@
 # IS2545 - DELIVERABLE 2: Unit Testing
 
-This Project consists of this following packages:
+This code of Project consists of this following packages:
 - edu.pitt (main class is put here)
 - edu.pitt.bean (used to define object: Visitor and Location)
 - edu.pitt.utils (used to design some necessay parameters and methods which will be used in Main java classs)
+- edu.pitt.test (all the tests are here)
+
+I exported this project as jar, you can use the following command to run.
+
+```
+java -jar CitySim9002.jar 9
+```
+## Testing
+
+When doing testing, the argument which this program accpets should be tested. what if the input is more than one arguments, a character, or is one number, these suitation should be inclued.
+
+The random number is used in three different ways: get a random vistor, get a random location and get a random number to determine whether the given visitor shall quit. All these should be tested.
+
+Puls, testing whether a certain location is liked or disliked by a certain visitor is necessary.
+
 
 ## CitySim9002 Requirements
 
