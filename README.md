@@ -8,12 +8,15 @@ This Project consists of this following packages:
 ## CitySim9002 Requirements
 
 >FUN-FIVE-VISITORS. Five visitors, numbered 1 through 5, shall traverse the City, one after the other.
+
+
 In /SQAHW2/src/edu/pitt/CitySim9002.java,  the following code ensure only 5 visitors shall traverse the City, one after the other.
 ```
 for (int i = 0; i < 5; i++) {
 	//...
 }
 ```
+
 
 >FUN-VISITOR. Each Visitor shall be of one of four types: a Student, a Professor, a Business Person, or a Blogger.
 
