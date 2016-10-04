@@ -1,5 +1,7 @@
 # IS2545 - DELIVERABLE 2: Unit Testing
 
+(JDK 1.8)
+
 This code of Project consists of this following packages:
 - edu.pitt (main class is put here)
 - edu.pitt.bean (used to define object: Visitor and Location)
