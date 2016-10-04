@@ -136,4 +136,19 @@ public class TestCases {
 		Visitor visitor = Visitor.Student;
 		assertEquals(visitor, service.getVisitor(generator));
 	}
+	
+	/**
+	 * Mock the random generator
+	 * Set the random number to be 10
+	 * Since the max index of location is 4, this Unit Test will fail and throw Exception
+	 * @throws Exception
+	 */
+	@Test
+	public void generatorTest6() throws Exception{
+		RandomGenerator generator = mock(RandomGenerator.class);
+		TravelService service = new TravelService();
+		when(generator.getLocationRandom()).thenReturn(10);
+		Location location = service.getLocation(generator);
+		assertEquals(location, service.getLocation(generator));
+	}
 }
