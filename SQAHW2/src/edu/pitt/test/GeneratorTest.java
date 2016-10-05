@@ -1,64 +1,18 @@
 package edu.pitt.test;
 
-import static org.mockito.Mockito.*;
-import static org.junit.Assert.*;
-import org.junit.Ignore;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
 import org.junit.Test;
 
 import edu.pitt.bean.Location;
 import edu.pitt.bean.Visitor;
 import edu.pitt.utils.RandomGenerator;
-//import static org.mockito.Mockito.*;
-//import static org.junit.Assert.*;
 import edu.pitt.utils.TravelService;
 
-public class TestCases {
-
-	/**
-	 * A professor should like Cathedral of Learning
-	 * this unit test should return true
-	 */
-	@Test
-	public void likeTest() {
-		TravelService service = new TravelService();
-		Location location = Location.CathedralLearning;
-		Visitor visitor = Visitor.Professor;
-		assertTrue(service.isLike(location, visitor));
-	}
-
-	/**
-	 * test if the parameters we input is a character
-	 * it should return false;
-	 */
-	@Test
-	public void argsTest1_charcter() {
-		TravelService service = new TravelService();
-		String[] args = { "a" };
-		assertTrue(service.checkArgs(args));
-	}
-
-	/**
-	 * test if the parameters we input is more than one 
-	 * it should return false;
-	 */
-	@Test
-	public void argsTest2_twoParameters() {
-		TravelService service = new TravelService();
-		String[] args = { "1", "2" };
-		assertTrue(service.checkArgs(args));
-	}
-
-	/**
-	 * test if the parameters we input is one number
-	 * it should return true;
-	 */
-	@Test
-	public void argsTest3_oneNumber() {
-		TravelService service = new TravelService();
-		String[] args = { "2" };
-		assertTrue(service.checkArgs(args));
-	}
-
+public class GeneratorTest {
 	/**
 	 * Mock the random generator, testing whether the location the generator choose is what we want
 	 * Set the random number to be 0
@@ -82,7 +36,6 @@ public class TestCases {
 	 * @throws Exception
 	 */
 	@Test
-	@Ignore
 	public void generatorTest2_visitor() throws Exception{
 		RandomGenerator generator = mock(RandomGenerator.class);
 		TravelService service = new TravelService();
@@ -100,7 +53,6 @@ public class TestCases {
 	 * @throws Exception
 	 */
 	@Test
-	@Ignore
 	public void generatorTest3_quitYes() throws Exception{
 		RandomGenerator generator = mock(RandomGenerator.class);
 		TravelService service = new TravelService();

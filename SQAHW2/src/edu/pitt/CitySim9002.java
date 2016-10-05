@@ -11,13 +11,16 @@ public class CitySim9002 {
 		if(!service.checkArgs(args)){
 			System.exit(1);
 		}
-		int seed = Integer.parseInt(args[0]);
 		
+		int seed = Integer.parseInt(args[0]);
 		System.out.println("Welcome to CitySim!  Your seed is " + seed);
-		Visitor visitor = null;
-		Location location = null;
+		
+		
 		RandomGenerator generator = new RandomGenerator();
 		generator.setSeed(seed);
+		
+		Visitor visitor = null;
+		Location location = null;
 		for (int i = 0; i < 5; i++) {
 			visitor = service.getVisitor(generator);
 			String people = "Visitor " + (i + 1);//the index of visitors starting from 0 to n - 1; 
@@ -30,12 +33,8 @@ public class CitySim9002 {
 					}
 				}
 				location = service.getLocation(generator);
-				System.out.println(people + " is going to " + location.getName());
-				if(service.isLike(location, visitor)){
-					System.out.println(people + " did like " + location.getName());
-				}else{
-					System.out.println(people + " did not like " + location.getName());
-				}
+				String result = service.isLikeRes(i, location, visitor);
+				System.out.println(result);
 			}
 			System.out.println("***");
 		}
