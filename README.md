@@ -3,16 +3,11 @@
 (JDK 1.8)
 
 This code of Project consists of this following packages:
-- edu.pitt (main class is put here)
+- edu.pitt (main class is put here, please run CitySim9002.java here to run the whole project)
 - edu.pitt.bean (used to define object: Visitor and Location)
 - edu.pitt.utils (used to design some necessay parameters and methods which will be used in Main java classs)
 - edu.pitt.test (all the tests are here)
 
-I exported this project as jar, you can use the following command to run.
-
-```
-java -jar CitySim9002.jar 9
-```
 ## Testing
 
 When doing testing, the argument which this program accpets should be tested. what if the input is more than one arguments, a character, or is one number, these suitation should be inclued.
