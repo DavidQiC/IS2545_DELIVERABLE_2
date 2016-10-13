@@ -32,11 +32,11 @@ public class TravelService {
 	public String isLikeRes(int i, Location location, Visitor visitor){
 		String ans = null;
 		String people = "Visitor " + (i + 1);
-		System.out.println(people + " is going to " + location.getName());
+		System.out.println(people + " is going to " + location.getName()+ "!");
 		if(isLike(location, visitor)){
-			ans = people + " did like " + location.getName();
+			ans = people + " did like " + location.getName() + ".";
 		}else{
-			ans = people + " did not like " + location.getName();
+			ans = people + " did not like " + location.getName() + ".";
 		}
 		return ans;
 	}
@@ -60,13 +60,13 @@ public class TravelService {
 	 */
 	public boolean checkArgs(String[] args){
 		if(args.length != 1){
-			System.out.println("The program shall accept one and only one argument");
+			System.out.println("Please enter one integer argument, seed");
 			return false;
 		}
 		try{
 			Integer.parseInt(args[0]);
 		}catch(Exception e){
-			System.out.println("The input must be a Integer");
+			System.out.println("Please enter one integer argument, seed");
 			return false;
 		}
 		return true;

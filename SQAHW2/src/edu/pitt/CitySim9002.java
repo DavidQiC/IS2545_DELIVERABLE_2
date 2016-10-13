@@ -13,7 +13,7 @@ public class CitySim9002 {
 		}
 		
 		int seed = Integer.parseInt(args[0]);
-		System.out.println("Welcome to CitySim!  Your seed is " + seed);
+		System.out.println("Welcome to CitySim!  Your seed is " + seed + ".");
 		
 		
 		RandomGenerator generator = new RandomGenerator();
@@ -24,11 +24,11 @@ public class CitySim9002 {
 		for (int i = 0; i < 5; i++) {
 			visitor = service.getVisitor(generator);
 			String people = "Visitor " + (i + 1);//the index of visitors starting from 0 to n - 1; 
-			System.out.println(people + " is " + visitor.getName() + " .");
+			System.out.println(people + " is " + visitor.getName() + ".");
 			for (int j = 0;; j++) {
 				if (j != 0) {
 					if (service.quit(generator)) {
-						System.out.println(people + " has left the city");
+						System.out.println(people + " has left the city.");
 						break;
 					}
 				}
