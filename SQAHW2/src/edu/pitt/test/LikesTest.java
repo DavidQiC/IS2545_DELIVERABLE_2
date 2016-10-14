@@ -1,6 +1,6 @@
 package edu.pitt.test;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -20,7 +20,7 @@ public class LikesTest {
 		TravelService service = new TravelService();
 		Location location = Location.CathedralLearning;
 		Visitor visitor = Visitor.Student;
-		assertTrue(service.isLike(location, visitor));
+		assertFalse(service.isLike(location, visitor));
 	}
 	
 	
@@ -45,7 +45,7 @@ public class LikesTest {
 		TravelService service = new TravelService();
 		Location location = Location.ThePoint;
 		Visitor visitor = Visitor.Business;
-		assertTrue(service.isLike(location, visitor));
+		assertFalse(service.isLike(location, visitor));
 	}
 	
 	/**
@@ -57,7 +57,7 @@ public class LikesTest {
 		TravelService service = new TravelService();
 		Location location = Location.Downtown;
 		Visitor visitor = Visitor.Blogger;
-		assertTrue(service.isLike(location, visitor));
+		assertFalse(service.isLike(location, visitor));
 	}
 	
 	

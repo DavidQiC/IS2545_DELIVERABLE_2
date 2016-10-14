@@ -1,7 +1,8 @@
 package edu.pitt.test;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 //import static org.mockito.Mockito.*;
@@ -20,7 +21,11 @@ public class ArgumentTest {
 	public void argsTest1_charcter() {
 		TravelService service = new TravelService();
 		String[] args = { "a" };
-		assertTrue(service.checkArgs(args));
+		try{
+			service.checkArgs(args);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -31,7 +36,11 @@ public class ArgumentTest {
 	public void argsTest2_twoParameters() {
 		TravelService service = new TravelService();
 		String[] args = { "1", "2" };
-		assertTrue(service.checkArgs(args));
+		try{
+			service.checkArgs(args);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 	}
 
 	/**
